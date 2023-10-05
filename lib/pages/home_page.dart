@@ -1,7 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:myfitness_guide/pages/video_info.dart';
 import '../utilities/colors.dart' as color;
+import 'package:get/get.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -101,7 +104,10 @@ _initData()
                  _showAlertDialog(context);
 
 
-               },child: Text('Details'),),
+               },child: InkWell(onTap: (){
+                 Get.to(()=>const VideoInfo());
+               },
+                   child: Text('Details')),),
                 SizedBox(width: 5,),
                 Icon(size: 20,
                   Icons.arrow_forward,
