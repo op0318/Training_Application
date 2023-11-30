@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:myfitness_guide/pages/homepage.dart';
 import 'package:myfitness_guide/utilities/colors.dart';
 import 'package:video_player/video_player.dart';
 
@@ -74,7 +75,8 @@ class _video_infoState extends State<video_info> {
                     children: [
                       InkWell(
                         onTap:(){
-                          Get.back();
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => const HomePage()));
                         },
                         child: Icon(Icons.arrow_back_ios, size: 20,
                         color:  AppColor.secondPageIconColor,),

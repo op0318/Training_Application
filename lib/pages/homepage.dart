@@ -20,14 +20,14 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Alert'),
-          content: Text('This is an example AlertDialog.'),
+          title: const Text('Alert'),
+          content: const Text('This is an example AlertDialog.'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );
@@ -107,8 +107,8 @@ class _HomePageState extends State<HomePage> {
                 },child: InkWell(onTap: (){
                   Get.to(()=>const video_info ());
                 },
-                    child: Text('Details')),),
-                SizedBox(width: 5,),
+                    child: const Text('Details')),),
+                const SizedBox(width: 5,),
                 Icon(size: 20,
                   Icons.arrow_forward,
                   color: color.AppColor.homePageIcons,)
@@ -143,24 +143,24 @@ class _HomePageState extends State<HomePage> {
                   children: [Text('Next workout',
                     style: TextStyle(fontSize:16,
                         color: color.AppColor.homePageContainerTextSmall),),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     Text('Legs Toning',
                       style: TextStyle(fontSize:25,
                           color: color.AppColor.homePageContainerTextSmall),),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     Text('and Glutes Workout',
                       style: TextStyle(fontSize:26,
                           color: color.AppColor.homePageContainerTextSmall),),
-                    SizedBox(height: 25,),
+                    const SizedBox(height: 25,),
                     Row(crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
 
                         Row(
                           children: [
-                            SizedBox(height: 25,),
+                            const SizedBox(height: 25,),
                             Icon(Icons.timer,size: 20,
                               color: color.AppColor.homePageContainerTextSmall,),
-                            SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
                             Text('60 min',
                               style: TextStyle(fontSize:15,
                                   color: color.AppColor.homePageContainerTextSmall),),],
@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                                   offset:  Offset(4,8)
                               )]
                           ),
-                          child: Icon(Icons.play_circle_fill,
+                          child: const Icon(Icons.play_circle_fill,
                             color: Colors.white,
                             size: 60,),
                         )],
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 5,),
-            Container(
+            SizedBox(
 
               height: 180,
               width: MediaQuery.of(context).size.width,
@@ -206,18 +206,16 @@ class _HomePageState extends State<HomePage> {
                           color: color.AppColor.gradientSecond.withOpacity(0.3)
                       ),
                         BoxShadow(
-                            offset: Offset(-1,-5),
+                            offset: const Offset(-1,-5),
                             blurRadius: 40,
                             color: color.AppColor.gradientSecond.withOpacity(0.3)
                         )],
                     ),
                     height: 120,
                     width: MediaQuery.of(context).size.width,
-
-
                   ),
                   Container(
-                    margin: EdgeInsets.only(right: 200,bottom: 30),
+                    margin: const EdgeInsets.only(right: 200,bottom: 30),
 
                     decoration: BoxDecoration(
                       // color: Colors.red.withOpacity(0.2),
@@ -245,7 +243,7 @@ class _HomePageState extends State<HomePage> {
                         )),
                         const SizedBox(height: 10,),
                         RichText(
-                            text:TextSpan(children: [TextSpan(
+                            text:TextSpan(children: const [TextSpan(
                                 text: 'Stick to your plan'
                             )],
                                 text: 'Keep it up\n',
@@ -310,7 +308,7 @@ class _HomePageState extends State<HomePage> {
                           padding:  const EdgeInsets.only(bottom: 5),
                           width: (MediaQuery.of(context).size.width-90)/2,
                           height: 170,
-                          margin:EdgeInsets.only(left: 30,bottom: 30),
+                          margin:const EdgeInsets.only(left: 30,bottom: 30),
 
                           decoration: BoxDecoration(
                             color: Colors.white,
