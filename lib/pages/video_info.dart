@@ -157,32 +157,30 @@ class _video_infoState extends State<video_info> {
 
                 ],
               ),
-            ):Container(
-              child: Column(
-                children: [
-                  Container(
-                    height : 100,
-                    padding: const EdgeInsets.only(top: 50,left: 30),
-                    child: Row(
-                      children: [
-                        InkWell(onTap: (){
-                          debugPrint("tapped");
-                        },
-                        child: Icon(Icons.arrow_back_ios,
+            ):Column(
+              children: [
+                Container(
+                  height : 100,
+                  padding: const EdgeInsets.only(top: 50,left: 30),
+                  child: Row(
+                    children: [
+                      InkWell(onTap: (){
+                        debugPrint("tapped");
+                      },
+                      child: Icon(Icons.arrow_back_ios,
+                        size: 20, color: AppColor.secondPageTopIconColor,),),
+                      Expanded(child: Container()),
+                      InkWell(onTap: (){},
+
+                        child: Icon(Icons.info_outline,
                           size: 20, color: AppColor.secondPageTopIconColor,),),
-                        Expanded(child: Container()),
-                        InkWell(onTap: (){},
 
-                          child: Icon(Icons.info_outline,
-                            size: 20, color: AppColor.secondPageTopIconColor,),),
-
-                      ],
-                    ),
+                    ],
                   ),
-                  _PlayView(context),
-                  _ControlView(context)
-                ],
-              ),
+                ),
+                _PlayView(context),
+                _ControlView(context)
+              ],
             ),
             Expanded(child: Container(
               decoration: const BoxDecoration(
@@ -269,9 +267,7 @@ class _video_infoState extends State<video_info> {
      if(!controller.value.isInitialized){
        debugPrint("controller cannot be initialized");
      }
-      if (_duration == null){
-       _duration = _controller?.value.duration;
-      }
+      _duration ??= _controller?.value.duration;
       var duration =_duration;
       if(duration == null){
         return ;
@@ -342,7 +338,7 @@ class _video_infoState extends State<video_info> {
                  inactiveTickMarkColor: Colors.red[100],
                  valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
                  valueIndicatorColor: Colors.redAccent,
-                 valueIndicatorTextStyle: TextStyle(color: Colors.white)
+                 valueIndicatorTextStyle: const TextStyle(color: Colors.white)
              ), child: Slider(value: max(0, min(_progress*100, 100)),
            min: 0, max: 100,divisions: 100,
            label: _position?.toString().split(".")[0],
@@ -408,13 +404,13 @@ class _video_infoState extends State<video_info> {
                ElevatedButton(onPressed: ()async{
                  //strore the previous video index
                final index = _isplayingIndex-1;
-               if (index>=0&& videoinfo.length>=0){
+               if (index>=0 && videoinfo.length>=0){
                  initializeVideo(index);
                }
                 else{
                   Get.snackbar("video", "",
                     snackPosition: SnackPosition.BOTTOM,
-                    icon: Icon(Icons.face, size: 30,
+                    icon: const Icon(Icons.face, size: 30,
                       color: Colors.white,
                     ),
                     backgroundColor: AppColor.gradientSecond,
@@ -456,7 +452,7 @@ class _video_infoState extends State<video_info> {
                  else{
                    Get.snackbar("video","",
                  snackPosition: SnackPosition.BOTTOM,
-                 icon: Icon(Icons.face, size: 30,
+                 icon: const Icon(Icons.face, size: 30,
                  color: Colors.white,
                  ),
                  backgroundColor: AppColor.gradientSecond,
@@ -509,7 +505,7 @@ class _video_infoState extends State<video_info> {
      );
   }
   _buildCard(int index){
-     return Container(
+     return SizedBox(
        height: 130,
        width: 200,
        child: Column(

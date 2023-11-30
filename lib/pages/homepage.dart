@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                               boxShadow: [BoxShadow(
                                   color: color.AppColor.gradientFirst,
                                   blurRadius: 10,
-                                  offset:  Offset(4,8)
+                                  offset:  const Offset(4,8)
                               )]
                           ),
                           child: const Icon(Icons.play_circle_fill,
@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
                           image: AssetImage('assets/card.jpg')
                       ),
                       boxShadow:[BoxShadow(
-                          offset: Offset(8,10),
+                          offset: const Offset(8,10),
                           blurRadius: 40,
                           color: color.AppColor.gradientSecond.withOpacity(0.3)
                       ),
